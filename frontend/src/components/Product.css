@@ -11,7 +11,7 @@
 }
 
 .product>img {
-    /* max-height: 170px; */
+    height: 170px;
     border-radius: 8px;
 }
 

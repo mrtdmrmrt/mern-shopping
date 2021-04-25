@@ -2,17 +2,17 @@ import * as actionTypes from '../constants/productConstants';
 
 export const getProductsReducer = (state = { products: [] }, action) => {
   switch (action.type) {
-    case actionTypes.GET_PRODUCT_REQUEST:
+    case actionTypes.GET_PRODUCTS_REQUEST:
       return {
         loading: true,
         products: [],
       };
-    case actionTypes.GET_PRODUCT_SUCCESS:
+    case actionTypes.GET_PRODUCTS_SUCCESS:
       return {
-        loading: false,
         products: action.payload,
+        loading: false,
       };
-    case actionTypes.GET_PRODUCT_FAIL:
+    case actionTypes.GET_PRODUCTS_FAIL:
       return {
         loading: false,
         error: action.payload,
@@ -21,6 +21,7 @@ export const getProductsReducer = (state = { products: [] }, action) => {
       return state;
   }
 };
+
 export const getProductDetailsReducer = (state = { product: {} }, action) => {
   switch (action.type) {
     case actionTypes.GET_PRODUCT_DETAILS_REQUEST:
@@ -30,7 +31,7 @@ export const getProductDetailsReducer = (state = { product: {} }, action) => {
     case actionTypes.GET_PRODUCT_DETAILS_SUCCESS:
       return {
         loading: false,
-        product: action.product,
+        product: action.payload,
       };
     case actionTypes.GET_PRODUCT_DETAILS_FAIL:
       return {
